@@ -1,7 +1,7 @@
 package org.example;
 
 public class FieldLengthLimitException extends Exception {
-    public static final int maxLength = 15;
+    public static final int maxLength = 30;
 
     public FieldLengthLimitException() {}
 

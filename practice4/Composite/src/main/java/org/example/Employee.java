@@ -1,11 +1,15 @@
 package org.example;
 
+import java.util.List;
+import java.util.ArrayList;
+
 public class Employee {
     protected String name;
     protected String departmentName;
     protected double salary;
     protected int id;
     protected static int nextId = 0;
+    protected ArrayList<Employee> subordinates;
 
     public Employee() {
         name = "None";
@@ -27,6 +31,21 @@ public class Employee {
         } else {
             this.salary = salary;
         }
+
+        subordinates = new ArrayList<Employee>();
+    }
+
+
+    public void addSubordinate(Employee emp) {
+        subordinates.add(emp);
+    }
+
+    public void removeSubordinate(Employee emp) {
+        subordinates.remove(emp);
+    }
+
+    public List<Employee> getSubordinates() {
+        return subordinates;
     }
 
     public void printEmployee() {

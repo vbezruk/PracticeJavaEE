@@ -19,6 +19,8 @@ public class Manager extends Employee {
         this.salary = salary;
 
         this.bonus = bonus;
+
+        this.subordinates = new ArrayList<Employee>();
     }
 
     public void printEmployee() {
