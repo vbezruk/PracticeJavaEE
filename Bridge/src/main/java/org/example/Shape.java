@@ -1,10 +1,15 @@
 package org.example;
 
 public abstract class Shape implements Cloneable {
+    protected DrawingAPI drawingAPI;
     private String id;
     protected String type;
 
-    abstract void draw();
+    protected Shape(DrawingAPI drawingAPI) {
+        this.drawingAPI = drawingAPI;
+    }
+
+    public abstract void draw();
 
     public String getType() {
         return type;
