@@ -1,4 +1,4 @@
-package FactoryMethod;
+package FactoryMethod.Stats;
 
 import java.util.Random;
 import java.lang.Math;

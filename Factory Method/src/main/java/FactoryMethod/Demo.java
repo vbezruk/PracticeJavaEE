@@ -1,5 +1,8 @@
 package FactoryMethod;
 
+import FactoryMethod.Character.Character;
+import FactoryMethod.Class.ClassFactory;
+
 public class Demo {
     public static void main(String[] args) {
         Character fighter = new Character("Fighter", ClassFactory.getClass("Fighter"));

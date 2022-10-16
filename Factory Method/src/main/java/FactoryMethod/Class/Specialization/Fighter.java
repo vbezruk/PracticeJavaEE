@@ -1,4 +1,6 @@
-package FactoryMethod;
+package FactoryMethod.Class.Specialization;
+
+import FactoryMethod.Character.CharacterClass;
 
 public class Fighter extends CharacterClass {
     private String perk;
