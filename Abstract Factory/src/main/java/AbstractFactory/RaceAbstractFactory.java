@@ -1,4 +1,5 @@
 package AbstractFactory;
 
-public class RaceAbstractFactory {
+public interface RaceAbstractFactory {
+    public CharacterRace create();
 }
