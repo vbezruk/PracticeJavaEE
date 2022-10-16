@@ -1,4 +1,6 @@
-package FactoryMethod;
+package FactoryMethod.Class.Specialization;
+
+import FactoryMethod.Character.CharacterClass;
 
 import java.util.ArrayList;
 import java.util.List;

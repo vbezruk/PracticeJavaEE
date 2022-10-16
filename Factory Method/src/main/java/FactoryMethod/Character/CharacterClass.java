@@ -1,4 +1,4 @@
-package FactoryMethod;
+package FactoryMethod.Character;
 
 public abstract class CharacterClass {
     protected String name;

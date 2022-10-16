@@ -1,4 +1,8 @@
-package FactoryMethod;
+package FactoryMethod.Class;
+
+import FactoryMethod.Character.CharacterClass;
+import FactoryMethod.Class.Specialization.Fighter;
+import FactoryMethod.Class.Specialization.Sorcerer;
 
 public class ClassFactory {
     public static CharacterClass getClass(String type) {

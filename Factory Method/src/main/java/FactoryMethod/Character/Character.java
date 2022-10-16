@@ -1,4 +1,6 @@
-package FactoryMethod;
+package FactoryMethod.Character;
+
+import FactoryMethod.Stats.Stats;
 
 public class Character {
     private final String name;
