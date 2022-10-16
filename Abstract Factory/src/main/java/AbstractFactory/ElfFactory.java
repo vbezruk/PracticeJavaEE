@@ -1,4 +1,8 @@
 package AbstractFactory;
 
-public class ElfFactory {
+public class ElfFactory implements RaceAbstractFactory {
+    @Override
+    public CharacterRace create() {
+        return new Elf();
+    }
 }
