@@ -1,5 +1,8 @@
-package AbstractFactory;
+package AbstractFactory.Character;
 
+
+import AbstractFactory.Race.CharacterRace;
+import AbstractFactory.Stats.Stats;
 
 public class Character {
     private final String name;
@@ -15,7 +18,7 @@ public class Character {
 
     public void addRaceBonuses() {
         for (String title : attributes.getStats().keySet()) {
-            attributes.getStats().put(title, attributes.getStats().get(title) + race.bonuses.getStats().get(title));
+            attributes.getStats().put(title, attributes.getStats().get(title) + race.getRaceBonuses().getStats().get(title));
         }
     }
 

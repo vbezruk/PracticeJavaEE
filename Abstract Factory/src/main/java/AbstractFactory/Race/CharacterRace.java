@@ -1,4 +1,6 @@
-package AbstractFactory;
+package AbstractFactory.Race;
+
+import AbstractFactory.Stats.Stats;
 
 public abstract class CharacterRace {
     protected String name;

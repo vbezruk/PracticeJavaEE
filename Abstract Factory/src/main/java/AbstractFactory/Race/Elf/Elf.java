@@ -1,4 +1,7 @@
-package AbstractFactory;
+package AbstractFactory.Race.Elf;
+
+import AbstractFactory.Race.CharacterRace;
+import AbstractFactory.Stats.Stats;
 
 public class Elf extends CharacterRace {
     public Elf() {

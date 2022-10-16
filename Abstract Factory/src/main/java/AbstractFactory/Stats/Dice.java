@@ -1,4 +1,4 @@
-package AbstractFactory;
+package AbstractFactory.Stats;
 
 import java.util.ArrayList;
 import java.util.Collections;
