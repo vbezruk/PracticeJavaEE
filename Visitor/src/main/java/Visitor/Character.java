@@ -1,9 +1,10 @@
-package Visitor.Character;
+package Visitor;
 
-import Visitor.Race.CharacterRace;
-import Visitor.Stats.Stats;
+import java.util.TreeMap;
+import Visitor.CharacterRace;
+import Visitor.Stats;
 
-public class Character {
+public class Character implements DataElement {
     private final String name;
     private final CharacterRace race;
     private final Stats attributes;
@@ -30,5 +31,21 @@ public class Character {
         }
 
         System.out.println();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public CharacterRace getRace() {
+        return race;
+    }
+
+    public Stats getAttributes() {
+        return attributes;
+    }
+
+    public TreeMap accept(DataElementsVisitor visitor) {
+        return visitor.visit(this);
     }
 }

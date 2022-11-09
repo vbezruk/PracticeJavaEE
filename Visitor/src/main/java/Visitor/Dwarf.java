@@ -1,7 +1,7 @@
-package Visitor.Race.Dwarf;
+package Visitor;
 
-import Visitor.Race.CharacterRace;
-import Visitor.Stats.Stats;
+import Visitor.CharacterRace;
+import Visitor.Stats;
 
 public class Dwarf extends CharacterRace {
     public Dwarf(){

@@ -1,9 +1,10 @@
-package Visitor.Stats;
+package Visitor;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
-public class Stats {
+public class Stats implements DataElement {
     private final Map<String, Integer> stats;
 
     public Stats(int str, int dex, int con, int inl, int wis, int cha) {
@@ -36,5 +37,9 @@ public class Stats {
 
     public Map<String, Integer> getStats() {
         return stats;
+    }
+
+    public TreeMap accept(DataElementsVisitor visitor) {
+        return visitor.visit(this);
     }
 }

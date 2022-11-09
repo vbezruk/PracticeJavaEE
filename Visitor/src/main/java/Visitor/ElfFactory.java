@@ -1,8 +1,8 @@
-package Visitor.Factory.Elf;
+package Visitor;
 
-import Visitor.Factory.RaceAbstractFactory;
-import Visitor.Race.CharacterRace;
-import Visitor.Race.Elf.Elf;
+import Visitor.RaceAbstractFactory;
+import Visitor.CharacterRace;
+import Visitor.Elf;
 
 public class ElfFactory implements RaceAbstractFactory {
     @Override

@@ -1,6 +1,6 @@
-package Visitor.Factory;
+package Visitor;
 
-import Visitor.Race.CharacterRace;
+import Visitor.CharacterRace;
 
 public interface RaceAbstractFactory {
     public CharacterRace create();

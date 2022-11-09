@@ -1,7 +1,7 @@
-package Visitor.Race.Elf;
+package Visitor;
 
-import Visitor.Race.CharacterRace;
-import Visitor.Stats.Stats;
+import Visitor.CharacterRace;
+import Visitor.Stats;
 
 public class Elf extends CharacterRace {
     public Elf() {

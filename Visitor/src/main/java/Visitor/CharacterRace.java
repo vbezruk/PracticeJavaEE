@@ -1,12 +1,18 @@
-package Visitor.Race;
+package Visitor;
 
-import Visitor.Stats.Stats;
+import Visitor.Stats;
 
-public abstract class CharacterRace {
+import java.util.TreeMap;
+
+public abstract class CharacterRace implements DataElement {
     protected String name;
     protected Stats bonuses;
     public Stats getRaceBonuses() {
         return bonuses;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public void print() {
@@ -20,4 +26,8 @@ public abstract class CharacterRace {
     }
 
     public abstract void saySMTH();
+
+    public TreeMap accept(DataElementsVisitor visitor) {
+        return visitor.visit(this);
+    }
 }
