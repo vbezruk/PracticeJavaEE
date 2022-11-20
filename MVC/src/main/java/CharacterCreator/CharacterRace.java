@@ -31,6 +31,7 @@ public abstract class CharacterRace implements DataElement {
 
     public abstract void saySMTH();
 
+    @Override
     public TreeMap accept(DataElementsVisitor visitor) {
         return visitor.visit(this);
     }

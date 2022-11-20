@@ -4,6 +4,7 @@ import java.util.TreeMap;
 import CharacterCreator.Character;
 import CharacterCreator.CharacterRace;
 import CharacterCreator.Stats;
+import CharacterCreator.CharacterClass;
 
 public class ElementVisitor implements DataElementsVisitor{
     @Override
@@ -11,7 +12,7 @@ public class ElementVisitor implements DataElementsVisitor{
         TreeMap<String, Object> treeMap = new TreeMap<String, Object>();
 
         treeMap.put("Name", character.getName());
-        treeMap.put("Race", character.getRace());
+        treeMap.put("HP", character.getHealth());
 
         return treeMap;
     }
@@ -21,6 +22,15 @@ public class ElementVisitor implements DataElementsVisitor{
         TreeMap<String, Object> treeMap = new TreeMap<String, Object>();
 
         treeMap.put("Race", characterRace.getName());
+
+        return treeMap;
+    }
+    
+    @Override
+    public TreeMap visit(CharacterClass characterClass){
+        TreeMap<String, Object> treeMap = new TreeMap<String, Object>();
+
+        treeMap.put("Class", characterClass.getClass());
 
         return treeMap;
     }
