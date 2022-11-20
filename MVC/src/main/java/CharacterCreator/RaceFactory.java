@@ -4,9 +4,8 @@
  */
 package CharacterCreator;
 
-public class DwarfFactory implements RaceAbstractFactory {
-    @Override
-    public Dwarf create() {
-        return new Dwarf();
+public class RaceFactory {
+    public static CharacterRace getRace(RaceAbstractFactory factory){
+        return factory.create();
     }
 }

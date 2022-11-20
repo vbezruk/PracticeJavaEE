@@ -4,9 +4,13 @@
  */
 package CharacterCreator;
 
-public class DwarfFactory implements RaceAbstractFactory {
-    @Override
-    public Dwarf create() {
-        return new Dwarf();
+/**
+ *
+ * @author Vladyslav Bezruk
+ */
+
+public class ClassFactory {
+    public static CharacterClass getClass(ClassAbstractFactory factory){
+        return factory.create();
     }
 }

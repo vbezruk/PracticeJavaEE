@@ -6,7 +6,7 @@ package CharacterCreator;
 
 public class ElfFactory implements RaceAbstractFactory {
     @Override
-    public CharacterRace create() {
+    public Elf create() {
         return new Elf();
     }
 }
