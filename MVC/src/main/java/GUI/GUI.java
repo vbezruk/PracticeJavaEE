@@ -328,8 +328,8 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
+    public static javax.swing.JComboBox<String> jComboBox1;
+    public static javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -340,18 +340,18 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JList<String> jList1;
+    public static javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
+    public static javax.swing.JTextArea jTextArea1;
+    public static javax.swing.JTextArea jTextArea2;
+    public static javax.swing.JTextField jTextField1;
+    public static javax.swing.JTextField jTextField2;
+    public static javax.swing.JTextField jTextField3;
+    public static javax.swing.JTextField jTextField4;
+    public static javax.swing.JTextField jTextField5;
+    public static javax.swing.JTextField jTextField6;
+    public static javax.swing.JTextField jTextField7;
     // End of variables declaration//GEN-END:variables
 }

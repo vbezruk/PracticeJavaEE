@@ -9,21 +9,29 @@ import java.util.List;
 import CharacterCreator.Stats;
 
 public class CareTaker {
-    private List<Stats> mementoList = new ArrayList<Stats>();
+    private List<Object> mementoList = new ArrayList<>();
 
     static int saveID = 0;
 
-    public void add(Stats state) {
-        mementoList.add(state);
+    public void add(Object object) {
+        mementoList.add(object);
 
         System.out.println("State saved with " + saveID + " id\n");
 
         saveID++;
     }
 
-    public Stats get(int index) {
+    public Object get(int index) {
         System.out.println("Loading stats from save " + index + "\n");
 
         return mementoList.get(index);
     }
+    
+    public Object getLast(){
+        return mementoList.get(mementoList.size()-1);
+    }
+    
+    public boolean isEmptyList(){
+        return mementoList.isEmpty();
+   }
 }

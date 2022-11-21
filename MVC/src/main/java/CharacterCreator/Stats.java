@@ -9,9 +9,10 @@ import java.util.Map;
 import java.util.TreeMap;
 import Visitor.DataElement;
 import Visitor.DataElementsVisitor;
+import Memento.Memento;
 
 public class Stats implements DataElement {
-    private final Map<String, Integer> stats;
+    private Map<String, Integer> stats;
 
     public Stats(int str, int dex, int con, int inl, int wis, int cha) {
         stats = new HashMap<>();
@@ -45,6 +46,15 @@ public class Stats implements DataElement {
         return stats;
     }
 
+    public Memento save(){
+        return new Memento(this);
+    }
+    
+    public void undoToLastSave(Object obj){
+        Memento memento = (Memento) obj;
+        this.stats = memento.getState().stats;
+    }
+        
     public TreeMap accept(DataElementsVisitor visitor) {
         return visitor.visit(this);
     }
