@@ -12,6 +12,10 @@ public abstract class CharacterClass implements DataElement {
     protected String name;
     protected int hp;
 
+    public String getName() {
+        return name;
+    }
+
     public abstract void printMagica();
 
     public int getHp() {

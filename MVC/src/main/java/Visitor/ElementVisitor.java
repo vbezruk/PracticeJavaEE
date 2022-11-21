@@ -30,7 +30,7 @@ public class ElementVisitor implements DataElementsVisitor{
     public TreeMap visit(CharacterClass characterClass){
         TreeMap<String, Object> treeMap = new TreeMap<String, Object>();
 
-        treeMap.put("Class", characterClass.getClass());
+        treeMap.put("Class", characterClass.getName());
 
         return treeMap;
     }

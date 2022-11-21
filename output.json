@@ -1,6 +1,4 @@
 [
-{"HP":10,"Stats":{"Charisma":19,"Dexterity":19,"Wisdom":23,"Intelligence":22,"Strength":14,"Constitution":18},"Class":class CharacterCreator.Fighter,"Name":"Enter name","Race":"Elf"}
-,{"HP":10,"Stats":{"Charisma":18,"Dexterity":19,"Wisdom":21,"Intelligence":16,"Strength":16,"Constitution":15},"Class":class CharacterCreator.Fighter,"Name":"Enter name","Race":"Elf"}
-,{"HP":10,"Stats":{"Charisma":15,"Dexterity":21,"Wisdom":20,"Intelligence":15,"Strength":15,"Constitution":19},"Class":class CharacterCreator.Fighter,"Name":"Enter namegdfgdfg","Race":"Elf"}
+{"HP":10,"Stats":{"Charisma":21,"Dexterity":16,"Wisdom":22,"Intelligence":20,"Strength":22,"Constitution":18},"Class":"Fighter","Name":"Enter name","Race":"Elf"}
 
 ]
