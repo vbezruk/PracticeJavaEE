@@ -33,7 +33,7 @@ public class Model {
     private  ElementVisitor visitor=new ElementVisitor();
     private  JSONObject jsonObject = new JSONObject();
     private  JSONArray jarray=new JSONArray();
-
+    
     public List<Character> getItems() {
         return items;
     }
@@ -47,6 +47,8 @@ public class Model {
     
 
     public  Stats getStat() {
+        stat = Stats.generate();
+        
         return stat;
     }
 
