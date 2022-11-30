@@ -42,10 +42,9 @@ public class ConnectInputMessage implements Runnable {
 
         PrintWriter out = null;
         BufferedReader inputUser = new BufferedReader(new InputStreamReader(System.in));
-
         String userMessage = null;
 
-        while (true) {
+        do {
             System.out.println("Enter message: ");
 
             try {
@@ -54,14 +53,9 @@ public class ConnectInputMessage implements Runnable {
                 out = new PrintWriter(serverConnect.getOutputStream(), true);
 
                 out.println(userMessage);
-
-                if ("exit".equals(userMessage)) {
-                    break;
-                }
-
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-        }
+        } while (!"exit".equals(userMessage));
     }
 }

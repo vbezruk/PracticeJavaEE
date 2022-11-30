@@ -20,45 +20,32 @@ public class ClientThread implements Runnable {
 
     @Override
     public void run() {
-        BufferedReader in;
-
         try {
-            in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+            BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));;
 
-        System.out.printf("Client %d is connected!\n", numberClient);
+            System.out.printf("Client %d is connected!\n", numberClient);
 
-        try {
+
             new PrintWriter(clientSocket.getOutputStream(), true).printf("Client %d\n", numberClient);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
 
-        String clientMessage = null;
 
-        while (true) {
-            try {
+            String clientMessage = null;
+
+            while (true) {
                 clientMessage = in.readLine();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
 
-            if (!"exit".equals(clientMessage)) {
-                System.out.printf("Client %d: %s\n", numberClient, clientMessage);
+                if (!"exit".equals(clientMessage)) {
+                    System.out.printf("Client %d: %s\n", numberClient, clientMessage);
 
-                chatServer.sendMessageForAllClient(numberClient, clientMessage);
-            } else {
-                try {
+                    chatServer.sendMessageForAllClient(numberClient, clientMessage);
+                } else {
                     in.close();
                     clientSocket.close();
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
+                    break;
                 }
-
-                break;
             }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 }

@@ -13,53 +13,43 @@ public class ChatServer implements Runnable {
 
     public void sendMessageForAllClient(int numberClient, String clientMessage) {
         for (Integer i : mapClient.keySet()) {
-            if (i == numberClient) {
-                continue;
-            }
+            if (i != numberClient) {
+                System.out.printf("Sending message to client %d\n", i);
 
-            System.out.printf("Sending message to client %d\n", i);
+                BufferedWriter outputUser = null;
 
-            BufferedWriter outputUser = null;
-
-            try {
-                outputUser = new BufferedWriter(new OutputStreamWriter(mapClient.get(i).getOutputStream()));
-                outputUser.write(String.format("Client %d: %s\nInput message:", numberClient, clientMessage));
-                outputUser.flush();
-                outputUser.close();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
+                try {
+                    outputUser = new BufferedWriter(new OutputStreamWriter(mapClient.get(i).getOutputStream()));
+                    outputUser.write(String.format("Client %d: %s\nInput message:", numberClient, clientMessage));
+                    outputUser.flush();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
             }
         }
     }
 
     @Override
     public void run() {
-
-        ServerSocket server = null;
         try {
-            server = new ServerSocket(8887);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+            ServerSocket server = new ServerSocket(8887);
 
-        System.out.println("Server started!");
+            System.out.println("Server started!");
 
-        int numberClient = 1;
+            int numberClient = 1;
 
-        Socket client = null;
+            Socket client = null;
 
-        while (true) {
-            try {
+            while (true) {
                 client = server.accept();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
+                Thread clientThread = new Thread(new ClientThread(client, this, numberClient));
+                clientThread.setDaemon(true);
+                clientThread.start();
+                mapClient.put(numberClient, client);
+                numberClient++;
             }
-
-            Thread clientThread = new Thread(new ClientThread(client, this, numberClient));
-            clientThread.setDaemon(true);
-            clientThread.start();
-            mapClient.put(numberClient, client);
-            numberClient++;
+        } catch  (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 }
